@@ -1,8 +1,8 @@
 diff --git a/vagrant/Vagrantfile b/vagrant/Vagrantfile
-index 3b2fae1..d3dc908 100644
+index 3b2fae1..c5fefb0 100644
 --- a/vagrant/Vagrantfile
 +++ b/vagrant/Vagrantfile
-@@ -63,12 +63,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+@@ -63,12 +63,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          # Default value: false
          target.ssh.forward_agent = true
  
@@ -16,7 +16,7 @@ index 3b2fae1..d3dc908 100644
 -          pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
 -          pm2 start rackhd-pm2-config.yml
 +          sudo pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
-+	   sudo pm2 ping
++          sudo pm2 ping
 +          sudo pm2 start rackhd-pm2-config.yml
          SHELL
      end
