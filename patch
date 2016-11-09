@@ -16,6 +16,7 @@ index 3b2fae1..d3dc908 100644
 -          pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
 -          pm2 start rackhd-pm2-config.yml
 +          sudo pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
+	   sudo pm2 ping
 +          sudo pm2 start rackhd-pm2-config.yml
          SHELL
      end
