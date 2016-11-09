@@ -1,0 +1,13 @@
+diff --git a/vagrant/Vagrantfile b/vagrant/Vagrantfile
+index 3b2fae1..207db64 100644
+--- a/vagrant/Vagrantfile
++++ b/vagrant/Vagrantfile
+@@ -68,7 +68,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+           service rsyslog stop
+           echo manual | sudo tee /etc/init/rsyslog.override
+           pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
+-          pm2 start rackhd-pm2-config.yml
++          DEBUG="*" pm2 start rackhd-pm2-config.yml
+         SHELL
+     end
+ end
