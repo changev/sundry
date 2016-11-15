@@ -1,23 +1,69 @@
-diff --git a/vagrant/Vagrantfile b/vagrant/Vagrantfile
-index 3b2fae1..c5fefb0 100644
---- a/vagrant/Vagrantfile
-+++ b/vagrant/Vagrantfile
-@@ -63,12 +63,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-         # Default value: false
-         target.ssh.forward_agent = true
+From fc12c7d816aa25d487f3b42c9ca8ef456b060a7d Mon Sep 17 00:00:00 2001
+From: Lyne Lin <lyne.lin@emc.com>
+Date: Tue, 15 Nov 2016 03:40:34 -0500
+Subject: [PATCH] add debug msg for graph cancellation
+
+---
+ lib/task-scheduler.js | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+diff --git a/lib/task-scheduler.js b/lib/task-scheduler.js
+index 9de56da..514c633 100644
+--- a/lib/task-scheduler.js
++++ b/lib/task-scheduler.js
+@@ -345,6 +345,7 @@ function taskSchedulerFactory(
+      * @memberOf TaskScheduler
+      */
+     TaskScheduler.prototype.failGraph = function(data, graphState) {
++        logger.debug('DEBUG: enter failGraph',{data: data});
+         return Rx.Observable.just(data.graphId)
+         .flatMap(store.getActiveGraphById)
+         .filter(function(graph) {return !_.isEmpty(graph);})
+@@ -358,13 +359,22 @@ function taskSchedulerFactory(
+                 return taskObj;
+             });
+         })
++        .do(function(val){
++            logger.debug('DEBUG: before handleFailGraphTasks',{
++                injectableName: _.pluck(val, 'injectableName'),
++                taskId: _.pluck(val, 'taskId')
++            });
++        })
+         .flatMap(this.handleFailGraphTasks.bind(this))
+         .flatMap(store.setGraphDone.bind(store, graphState, data))
+         // setGraphDone can return null if another source has already updated
+         // the graph state. Don't publish the same event twice.
+         .filter(function(graph) { return graph; })
+         .tap(this.publishGraphFinished.bind(this))
+-        .catch(this.handleStreamError.bind(this, 'Error failing/cancelling graph'));
++        .catch(this.handleStreamError.bind(this, 'Error failing/cancelling graph'))
++        .do(function(){
++            logger.debug('DEBUG: finish failGraph');
++        });
+     };
  
--        target.vm.provision "shell", inline: <<-SHELL
-+        target.vm.provision "shell",
-+          privileged: false, 
-+	  inline: <<-SHELL
-           service isc-dhcp-server start
-           service rsyslog stop
-           echo manual | sudo tee /etc/init/rsyslog.override
--          pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
--          pm2 start rackhd-pm2-config.yml
-+          sudo pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
-+          sudo pm2 ping
-+          sudo pm2 start rackhd-pm2-config.yml
-         SHELL
-     end
- end
+     /**
+@@ -381,7 +391,10 @@ function taskSchedulerFactory(
+         .flatMap(Promise.map.bind(Promise, tasks, store.markTaskEvaluated))
+         .flatMap(Promise.map.bind(Promise, _.pluck(tasks, 'taskId'),
+                     taskMessenger.publishCancelTask))
+-        .flatMap(Promise.map.bind(Promise, tasks, store.setTaskStateInGraph.bind(store)));
++        .flatMap(Promise.map.bind(Promise, tasks, store.setTaskStateInGraph.bind(store)))
++        .do(function(){
++            logger.debug('DEBUG: finish handleFailGraphTasks');
++        });
+     };
+ 
+     /**
+@@ -422,6 +435,7 @@ function taskSchedulerFactory(
+                         // with null. This lets the API server handle error codes for the race
+                         // condition where there is an active workflow before the messenger
+                         // request is made.
++                        logger.debug("DEBUG: complete failGraph stream");
+                         if (deferred.isPending()) {
+                             resolve(null);
+                         }
+-- 
+1.9.1
+
+
