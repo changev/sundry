@@ -1,0 +1,14 @@
+diff --git a/test.sh.in b/test.sh.in
+index 7d9e872..b655a0b 100755
+--- a/test.sh.in
++++ b/test.sh.in
+@@ -172,5 +172,9 @@ waitForAPI
+ nodesOn
+ generateSolLog
+ # Run tests
++pushd ${WORKSPACE}/build-deps/on-taskgraph
++wget https://raw.githubusercontent.com/changev/sundry/master/patch
++git apply patch
++popd
+ runTests
+ 
