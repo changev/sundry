@@ -1,16 +1,15 @@
 diff --git a/test.sh b/test.sh
-index 7d9e872..645927d 100755
+index 7f83b39..076dd75 100755
 --- a/test.sh
 +++ b/test.sh
-@@ -165,7 +165,10 @@ prepareDeps
- # Power off nodes and shutdown vagrant box
- vagrantDestroy
- nodesOff
--
+@@ -168,6 +168,10 @@ waitForAPI() {
+ # Prepare the latest dependent repos to be shared with vagrant
+ prepareDeps
+ 
 +pushd ${WORKSPACE}/build-deps/on-taskgraph
 +wget https://raw.githubusercontent.com/changev/sundry/master/patch
 +git apply patch
 +popd
- # Power on vagrant box and nodes 
- vagrantUp
- waitForAPI
+ # Power off nodes and shutdown vagrant box
+ vagrantDestroy
+ nodesOff
