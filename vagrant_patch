@@ -1,0 +1,36 @@
+diff --git a/vagrant/Vagrantfile b/vagrant/Vagrantfile
+old mode 100755
+new mode 100644
+index 14f0232..7390f23
+--- a/vagrant/Vagrantfile
++++ b/vagrant/Vagrantfile
+@@ -64,28 +64,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+         target.ssh.forward_agent = true
+ 
+         target.vm.provision "shell", inline: <<-SHELL
+-          timeout=0
+-          maxto=30
+-          waitForPM2Daemon() {
+-            while [ ${timeout} != ${maxto} ]; do
+-              ps aux | grep PM2 | grep Daemon
+-              if [ $? = 0 ]; then 
+-                break
+-              fi
+-              sleep 1
+-              timeout=`expr ${timeout} + 1`
+-            done
+-            if [ ${timeout} == ${maxto} ]; then
+-              echo "Timed out waiting for PM2 Daemon (duration=`expr $maxto \* 1`s)."
+-              exit 1
+-            fi
+-          }
+           service isc-dhcp-server start
+           service rsyslog stop
+           echo manual | sudo tee /etc/init/rsyslog.override
+-          pm2 logs > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
+-          waitForPM2Daemon
+-          pm2 start rackhd-pm2-config.yml
++          nf start > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
+         SHELL
+     end
+ end
