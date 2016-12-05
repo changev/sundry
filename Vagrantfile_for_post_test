@@ -28,12 +28,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         # If true, then any SSH connections made will enable agent forwarding.
         # Default value: false
         target.ssh.forward_agent = true
-
-        target.vm.provision "shell", inline: <<-SHELL
-          service isc-dhcp-server start
-          service rsyslog stop
-          echo manual | sudo tee /etc/init/rsyslog.override
-          nf start > /home/vagrant/src/"#{ENV['REPO_NAME']}"/vagrant.log &
-        SHELL
     end
 end
