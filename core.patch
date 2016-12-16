@@ -1,0 +1,35 @@
+From d672e94ba6fbaf000faf4a97b50ab20758bce9f3 Mon Sep 17 00:00:00 2001
+From: Lyne Lin <lyne.lin@emc.com>
+Date: Thu, 15 Dec 2016 02:25:05 -0500
+Subject: [PATCH] add timeout parameters for cancel graph request
+
+---
+ lib/protocol/task-graph-runner.js | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/lib/protocol/task-graph-runner.js b/lib/protocol/task-graph-runner.js
+index f8b9e88..9dbc0ad 100644
+--- a/lib/protocol/task-graph-runner.js
++++ b/lib/protocol/task-graph-runner.js
+@@ -248,14 +248,16 @@ function taskGraphRunnerProtocolFactory (
+         );
+     };
+ 
+-    TaskGraphRunnerProtocol.prototype.cancelTaskGraph = function (graphId) {
++    TaskGraphRunnerProtocol.prototype.cancelTaskGraph = function (graphId, timeout) {
+         assert.uuid(graphId);
+ 
+         var filter = {graphId: graphId};
+         return messenger.request(
+             Constants.Protocol.Exchanges.TaskGraphRunner.Name,
+             'methods.cancelTaskGraph',
+-            filter
++            filter,
++            undefined,
++            timeout
+         ).then(function (data) {
+             return data.value;
+         });
+-- 
+1.9.1
+

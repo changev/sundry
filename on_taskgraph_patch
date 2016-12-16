@@ -1,15 +1,21 @@
 diff --git a/test.sh b/test.sh
-index 7f83b39..076dd75 100755
+index 7f83b39..3806c85 100755
 --- a/test.sh
 +++ b/test.sh
-@@ -168,6 +168,10 @@ waitForAPI() {
+@@ -168,6 +168,16 @@ waitForAPI() {
  # Prepare the latest dependent repos to be shared with vagrant
  prepareDeps
  
 +pushd ${WORKSPACE}/build-deps/on-taskgraph
-+wget https://raw.githubusercontent.com/changev/sundry/master/patch
-+git apply patch
++wget https://raw.githubusercontent.com/changev/sundry/master/taskgraph.patch
++git apply taskgraph.patch
 +popd
++git clone https://github.com/RackHD/on-core ${WORKSPACE}/on-core
++pushd ${WORKSPACE}/on-core
++wget https://raw.githubusercontent.com/changev/sundry/master/core.patch
++git apply core.patch
++popd
++mv ${WORKSPACE}/on-core ${WORKSPACE}/build-deps/on-taskgraph/node_modules/
  # Power off nodes and shutdown vagrant box
  vagrantDestroy
  nodesOff

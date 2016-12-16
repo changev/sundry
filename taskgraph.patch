@@ -1,0 +1,63 @@
+From 6886e5e2e4171f9764afab582110faeb0642a124 Mon Sep 17 00:00:00 2001
+From: Lyne Lin <lyne.lin@emc.com>
+Date: Thu, 15 Dec 2016 02:27:36 -0500
+Subject: [PATCH] add timeout value for cancelling workflow
+
+---
+ lib/service-graph.js  |  4 ++--
+ lib/task-scheduler.js | 10 ++++++++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/lib/service-graph.js b/lib/service-graph.js
+index b6166f2..7ef9497 100644
+--- a/lib/service-graph.js
++++ b/lib/service-graph.js
+@@ -87,7 +87,7 @@ function ServiceGraph(TaskGraph, store, taskGraphProtocol, Constants, Promise, _
+                     // Migrate running service graphs if the definition has changed from
+                     // the currently active one
+                     if (!_.isEqual(activeGraph.definition, def)) {
+-                        return taskGraphProtocol.cancelTaskGraph(activeGraph.instanceId)
++                        return taskGraphProtocol.cancelTaskGraph(activeGraph.instanceId, 5)
+                         .then(function() {
+                             return store.deleteGraph(groups.running[def.injectableName].instanceId);
+                         })
+@@ -113,7 +113,7 @@ function ServiceGraph(TaskGraph, store, taskGraphProtocol, Constants, Promise, _
+                 // Delete service graphs for which there is no definition
+                 // (i.e. migrate old graphs out of existence)
+                 return Promise.all(_.map(groups.running, function(graph) {
+-                    return taskGraphProtocol.cancelTaskGraph(graph.instanceId)
++                    return taskGraphProtocol.cancelTaskGraph(graph.instanceId, 5)
+                     .then(function() {
+                         return store.deleteGraph(graph.instanceId);
+                     });
+diff --git a/lib/task-scheduler.js b/lib/task-scheduler.js
+index 9de56da..59bc10a 100644
+--- a/lib/task-scheduler.js
++++ b/lib/task-scheduler.js
+@@ -364,7 +364,10 @@ function taskSchedulerFactory(
+         // the graph state. Don't publish the same event twice.
+         .filter(function(graph) { return graph; })
+         .tap(this.publishGraphFinished.bind(this))
+-        .catch(this.handleStreamError.bind(this, 'Error failing/cancelling graph'));
++        .catch(this.handleStreamError.bind(this, 'Error failing/cancelling graph'))
++        .do(function(){
++            logger.debug('CI-DEBUG: finish failGraph');
++        });
+     };
+ 
+     /**
+@@ -381,7 +384,10 @@ function taskSchedulerFactory(
+         .flatMap(Promise.map.bind(Promise, tasks, store.markTaskEvaluated))
+         .flatMap(Promise.map.bind(Promise, _.pluck(tasks, 'taskId'),
+                     taskMessenger.publishCancelTask))
+-        .flatMap(Promise.map.bind(Promise, tasks, store.setTaskStateInGraph.bind(store)));
++        .flatMap(Promise.map.bind(Promise, tasks, store.setTaskStateInGraph.bind(store)))
++        .do(function(){
++            logger.debug('CI-DEBUG: finish handleFailGraphTasks');
++        });
+     };
+ 
+     /**
+-- 
+1.9.1
+
