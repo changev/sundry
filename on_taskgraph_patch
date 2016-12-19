@@ -15,7 +15,7 @@ index 7f83b39..3806c85 100755
 +wget https://raw.githubusercontent.com/changev/sundry/master/core.patch
 +git apply core.patch
 +popd
-+mv ${WORKSPACE}/on-core ${WORKSPACE}/build-deps/on-taskgraph/node_modules/
++rsync -r ${WORKSPACE}/on-core ${WORKSPACE}/build-deps/on-taskgraph/node_modules/on-core
  # Power off nodes and shutdown vagrant box
  vagrantDestroy
  nodesOff
