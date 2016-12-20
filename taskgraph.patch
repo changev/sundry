@@ -1,4 +1,4 @@
-From 6886e5e2e4171f9764afab582110faeb0642a124 Mon Sep 17 00:00:00 2001
+From 4fd34cceaa551cf42bb57b4aac624b4f543e6505 Mon Sep 17 00:00:00 2001
 From: Lyne Lin <lyne.lin@emc.com>
 Date: Thu, 15 Dec 2016 02:27:36 -0500
 Subject: [PATCH] add timeout value for cancelling workflow
@@ -9,7 +9,7 @@ Subject: [PATCH] add timeout value for cancelling workflow
  2 files changed, 10 insertions(+), 4 deletions(-)
 
 diff --git a/lib/service-graph.js b/lib/service-graph.js
-index b6166f2..7ef9497 100644
+index b6166f2..103f782 100644
 --- a/lib/service-graph.js
 +++ b/lib/service-graph.js
 @@ -87,7 +87,7 @@ function ServiceGraph(TaskGraph, store, taskGraphProtocol, Constants, Promise, _
@@ -17,7 +17,7 @@ index b6166f2..7ef9497 100644
                      // the currently active one
                      if (!_.isEqual(activeGraph.definition, def)) {
 -                        return taskGraphProtocol.cancelTaskGraph(activeGraph.instanceId)
-+                        return taskGraphProtocol.cancelTaskGraph(activeGraph.instanceId, 5)
++                        return taskGraphProtocol.cancelTaskGraph(activeGraph.instanceId, 5000)
                          .then(function() {
                              return store.deleteGraph(groups.running[def.injectableName].instanceId);
                          })
@@ -26,7 +26,7 @@ index b6166f2..7ef9497 100644
                  // (i.e. migrate old graphs out of existence)
                  return Promise.all(_.map(groups.running, function(graph) {
 -                    return taskGraphProtocol.cancelTaskGraph(graph.instanceId)
-+                    return taskGraphProtocol.cancelTaskGraph(graph.instanceId, 5)
++                    return taskGraphProtocol.cancelTaskGraph(graph.instanceId, 5000)
                      .then(function() {
                          return store.deleteGraph(graph.instanceId);
                      });
