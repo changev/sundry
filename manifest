@@ -5,7 +5,7 @@
     "repositories": [
         {
             "branch": "", 
-            "commit-id": "3210f9d817863cde37b3664bf63b8e54e1ddafa4", 
+            "commit-id": "38b20e4687f0ea97339943adea13783bd23d7868", 
             "repository": "https://github.com/RackHD/on-core.git"
         }, 
         {
@@ -30,7 +30,7 @@
         }, 
         {
             "branch": "", 
-            "commit-id": "cc4fbbc1104db4192010624aef61ce100a8ce609", 
+            "commit-id": "fb87e68a34b18e945c82103d55eaaa8f1fa56071", 
             "repository": "https://github.com/RackHD/on-tasks.git"
         }, 
         {
@@ -50,7 +50,7 @@
         }, 
         {
             "branch": "", 
-            "commit-id": "06b185807a5338cfff0683c190b2fb9f12f5acad", 
+            "commit-id": "feature/test_pr_gate", 
             "repository": "https://github.com/RackHD/on-build-config.git"
         }
     ]
