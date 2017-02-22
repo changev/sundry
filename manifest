@@ -1,0 +1,57 @@
+{
+    "build-name": "rackhd-devel", 
+    "build-requirements": "xenial", 
+    "downstream-jobs": [], 
+    "repositories": [
+        {
+            "branch": "", 
+            "commit-id": "3210f9d817863cde37b3664bf63b8e54e1ddafa4", 
+            "repository": "https://github.com/RackHD/on-core.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "277104dd24dfad84cc831bafddff35ba1890e59b", 
+            "repository": "https://github.com/RackHD/on-dhcp-proxy.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "7d3a816c70cb632b76db9b65e5a18c29ad42a297", 
+            "repository": "https://github.com/RackHD/on-http.git" 
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "9481bf6764853117fe3e4fa2895837e2a9470d33", 
+            "repository": "https://github.com/RackHD/on-syslog.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "04627b60d9871d8d3b605da2691391ec0ae44e5d", 
+            "repository": "https://github.com/RackHD/on-taskgraph.git", 
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "cc4fbbc1104db4192010624aef61ce100a8ce609", 
+            "repository": "https://github.com/RackHD/on-tasks.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "851a35f9ccbd39f7a1583613eb43b5c2b67da91a", 
+            "repository": "https://github.com/RackHD/on-tftp.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "71fd5d0954f47f35c9ce9f25ee4a4be0d6aa18ce", 
+            "repository": "https://github.com/RackHD/di.js.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "469eeb58e179a0c8640a409bda430a2b510744c1", 
+            "repository": "https://github.com/RackHD/RackHD.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "06b185807a5338cfff0683c190b2fb9f12f5acad", 
+            "repository": "https://github.com/RackHD/on-build-config.git"
+        }
+    ]
+}
