@@ -5,53 +5,59 @@
     "repositories": [
         {
             "branch": "", 
-            "commit-id": "38b20e4687f0ea97339943adea13783bd23d7868", 
-            "repository": "https://github.com/RackHD/on-core.git"
+            "commit-id": "origin/pr/268/merge", 
+            "repository": "https://github.com/RackHD/on-core.git", 
+            "under-test": true
         }, 
         {
             "branch": "", 
-            "commit-id": "277104dd24dfad84cc831bafddff35ba1890e59b", 
+            "commit-id": "9899b605601d16026f07f0bf1ea0f821fa0f8db3", 
             "repository": "https://github.com/RackHD/on-dhcp-proxy.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "7d3a816c70cb632b76db9b65e5a18c29ad42a297", 
-            "repository": "https://github.com/RackHD/on-http.git" 
+            "commit-id": "25c81ecdb17455a6cfa69ea0f1e4038bfa27523f", 
+            "repository": "https://github.com/RackHD/on-http.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "9481bf6764853117fe3e4fa2895837e2a9470d33", 
+            "commit-id": "1eede1b08f342c9c7b63e870301fd6cd38effa6d", 
             "repository": "https://github.com/RackHD/on-syslog.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "04627b60d9871d8d3b605da2691391ec0ae44e5d", 
+            "commit-id": "565e552245d69dc8e064254b9e0c95fb4b5575ca", 
             "repository": "https://github.com/RackHD/on-taskgraph.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "fb87e68a34b18e945c82103d55eaaa8f1fa56071", 
+            "commit-id": "03cb052efe2336b5870a8a3f3164779c01c866eb", 
             "repository": "https://github.com/RackHD/on-tasks.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "851a35f9ccbd39f7a1583613eb43b5c2b67da91a", 
+            "commit-id": "b2affa39e9354af0da6533001bb7ccc98334ccd9", 
             "repository": "https://github.com/RackHD/on-tftp.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "71fd5d0954f47f35c9ce9f25ee4a4be0d6aa18ce", 
+            "commit-id": "6f1db1cb6b21d3b6df9c77654e12ef03af970e5c", 
             "repository": "https://github.com/RackHD/di.js.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "469eeb58e179a0c8640a409bda430a2b510744c1", 
+            "commit-id": "d5ab6c6c776f246e546877183b35a0e7d047452d", 
             "repository": "https://github.com/RackHD/RackHD.git"
         }, 
         {
             "branch": "", 
-            "commit-id": "feature/test_pr_gate", 
+            "commit-id": "6ad30da9bd93539865cb7ff2a39ebcfe9b2684b9", 
             "repository": "https://github.com/RackHD/on-build-config.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "ca705d7d4c6f3c43c5e87abfb16f6d1086d773c3", 
+            "repository": "https://github.com/RackHD/ucs-service.git"
         }
     ]
 }
