@@ -25,8 +25,8 @@
         }, 
         {
             "branch": "master", 
-            "commit-id": "27e0d55b8cb577d7fe580e732bb39ff2071c01f2", 
-            "repository": "https://github.com/RackHD/on-taskgraph.git"
+            "commit-id": "2ab5803ebd93170cf5f488c4a13cd337fe7e5e95", 
+            "repository": "https://github.com/changev/on-taskgraph.git"
         }, 
         {
             "branch": "master", 
