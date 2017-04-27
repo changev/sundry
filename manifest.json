@@ -1,0 +1,77 @@
+{
+    "build-name": "rackhd-devel", 
+    "build-requirements": "xenial", 
+    "downstream-jobs": [], 
+    "repositories": [
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-core.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-dhcp-proxy.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-http.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-syslog.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-taskgraph.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-tasks.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-tftp.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-skupack.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/di.js.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/RackHD.git"
+        }, 
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-imagebuilder.git"
+        },
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-wss.git"
+        },
+        {
+            "branch": "", 
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/on-statsd.git"
+        },
+        {
+            "branch": "",
+            "commit-id": "",
+            "repository": "https://github.com/RackHD-Mirror/ucs-service.git"
+        }
+    ]
+}
