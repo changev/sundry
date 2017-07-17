@@ -49,7 +49,7 @@
             "repository": "https://github.com/RackHD/di.js.git"
         }, 
         {
-            "branch": "master", 
+            "branch": "feature/on-web-ui-ci-cd", 
             "commit-id": "8704146bb1332a551c4fc7f18035007448cbbf68", 
             "repository": "https://github.com/changev/RackHD.git"
         }, 
@@ -69,7 +69,7 @@
             "repository": "https://github.com/RackHD/on-statsd.git"
         }, 
         {
-            "branch": "master", 
+            "branch": "feature/on-web-ui-ci-cd", 
             "commit-id": "1641a043bf507e1c69dda54ec7dd32eb88c0d636", 
             "repository": "https://github.com/changev/on-web-ui.git"
         }
