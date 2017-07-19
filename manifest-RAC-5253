@@ -50,7 +50,7 @@
         }, 
         {
             "branch": "feature/on-web-ui-ci-cd", 
-            "commit-id": "8704146bb1332a551c4fc7f18035007448cbbf68", 
+            "commit-id": "5c6f33964f41723d45526b5d51fb1118b454ec90", 
             "repository": "https://github.com/changev/RackHD.git"
         }, 
         {
