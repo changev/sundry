@@ -11,7 +11,7 @@
         {
             "branch": "master", 
             "commit-id": "b9568be0d8af3187ad10d11538327f01e3b24537", 
-            "repository": "https://github.com/RackHD/on-wss.git"
+            "repository": "https://github.com/changev/on-wss.git"
         }, 
         {
             "branch": "feature/on-web-ui-ci-cd", 
