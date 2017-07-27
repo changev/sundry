@@ -4,6 +4,11 @@
     "downstream-jobs": [], 
     "repositories": [
         {
+            "branch": "master",
+            "commit-id": "",
+            "repository": "https://github.com/rackhd/RackHD"
+        },
+        {
             "branch": "master", 
             "commit-id": "758e849fbb05bdb6441346a6432b220cf619d9fe", 
             "repository": "https://github.com/changev/on-wss.git"
