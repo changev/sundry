@@ -4,13 +4,8 @@
     "downstream-jobs": [], 
     "repositories": [
         {
-            "branch": "feature/on-web-ui-ci-cd", 
-            "commit-id": "5c6f33964f41723d45526b5d51fb1118b454ec90", 
-            "repository": "https://github.com/changev/RackHD.git"
-        }, 
-        {
             "branch": "master", 
-            "commit-id": "b9568be0d8af3187ad10d11538327f01e3b24537", 
+            "commit-id": "758e849fbb05bdb6441346a6432b220cf619d9fe", 
             "repository": "https://github.com/changev/on-wss.git"
         }, 
         {
