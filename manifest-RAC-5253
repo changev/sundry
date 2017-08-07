@@ -5,12 +5,12 @@
     "repositories": [
         {
             "branch": "feature/on-web-ui-ci-cd", 
-            "commit-id": "efd91829f6fe7ffffe0a52bb0bbb269fa03ccad7", 
+            "commit-id": "1d805013829484f2308ecd5d9cc8490ca33344fb", 
             "repository": "https://github.com/changev/on-wss.git"
         }, 
         {
             "branch": "feature/on-web-ui-ci-cd", 
-            "commit-id": "3e32ff4355978c33a8467c72914ba0914290e3dc", 
+            "commit-id": "6600722a10665dc8fab43bfabb4f118fa47214ef", 
             "repository": "https://github.com/changev/on-web-ui.git"
         }
     ]
