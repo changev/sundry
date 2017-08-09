@@ -10,7 +10,7 @@
         }, 
         {
             "branch": "feature/on-web-ui-ci-cd", 
-            "commit-id": "537d50e96624ec843dff96f85f3237e131e9de4e", 
+            "commit-id": "6eb2e02d97bb381e004154bd1228ec996043895f", 
             "repository": "https://github.com/changev/on-web-ui.git"
         }
     ]
