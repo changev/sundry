@@ -80,12 +80,6 @@
                                     "commit-id": "",
                                                 "repository": "https://github.com/RackHD-Mirror/on-statsd.git"
                                                         
-            },
-            {
-                        "branch": "master",
-                                    "commit-id": "",
-                                                "repository": "https://github.com/RackHD-Mirror/on-web-ui.git"
-                                                        
             }
                 
                 ]
