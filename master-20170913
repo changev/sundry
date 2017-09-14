@@ -1,0 +1,67 @@
+{
+    "build-name": "rackhd-devel", 
+    "build-requirements": "xenial", 
+    "downstream-jobs": [], 
+    "repositories": [
+        {
+            "branch": "master", 
+            "commit-id": "28ad0b4fa670c699f08d087096a22d57925672fc", 
+            "repository": "https://github.com/RackHD/on-core.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "d8357255c98de6b6edb35dd42b55095b1158c73a", 
+            "repository": "https://github.com/RackHD/on-dhcp-proxy.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "4c55c40743207db249408da0ec9cb53da59b1271", 
+            "repository": "https://github.com/RackHD/on-http.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "fdf93e42098611eb887d18bee2f0d52f059b07ac", 
+            "repository": "https://github.com/RackHD/on-syslog.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "2033f1590ccfc2603e801aa8087f762651abb309", 
+            "repository": "https://github.com/RackHD/on-taskgraph.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "b82d075f57b55e90f4788a430d3d0c6ce141f2f0", 
+            "repository": "https://github.com/RackHD/on-tasks.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "1d9ace77b8ba6f57c98a64cf881941ac29f46505", 
+            "repository": "https://github.com/RackHD/on-tftp.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "538fd0857e491525a2c80313bab8f3235e472fa8", 
+            "repository": "https://github.com/RackHD/on-skupack.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "3748b15afbdae2eb64f0932d467e7b4dece6e8eb", 
+            "repository": "https://github.com/RackHD/di.js.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "", 
+            "repository": "https://github.com/RackHD-mirror/RackHD.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "e0bd6b2dd138c02f7125d73c220a063ea6bdcb44", 
+            "repository": "https://github.com/RackHD/on-imagebuilder.git"
+        }, 
+        {
+            "branch": "master", 
+            "commit-id": "fc76647fdddfe4e457af4a8bcc3f35cf1e6eeba9", 
+            "repository": "https://github.com/RackHD/on-statsd.git"
+        }
+    ]
+}
